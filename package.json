@@ -1,0 +1,78 @@
+{
+  "name": "wolfpack-client",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.7",
+    "electron-builder": "^23.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"cross-env NODE_ENV=development yarn electron:start\"",
+    "electron:build": "yarn build && electron-builder",
+    "electron:start": "electron ."
+  },
+  "homepage": "./",
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.8.6",
+    "autoprefixer": "^10.4.7",
+    "marked": "^4.0.17",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-scripts": "^5.0.1",
+    "react-spring": "^9.4.5",
+    "tailwindcss": "^3.1.4",
+    "wait-on": "^6.0.1"
+  },
+  "build": {
+    "extends": null,
+    "extraMetadata": {
+      "main": "./index.js"
+    },
+    "appId": "io.kalka.wolfpack",
+    "files": [
+      "dist/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "index.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
