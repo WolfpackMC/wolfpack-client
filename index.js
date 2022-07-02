@@ -53,9 +53,7 @@ const createWindow = async () => {
     transparent: true,
     icon: path.join(__dirname, "assets/wolfpack2.png"),
     webPreferences: {
-      preload: app.isPackaged
-        ? path.join(__dirname, "preload.js")
-        : path.join(__dirname, "src/js/preload.js"),
+      preload: path.join(__dirname, "src/js/preload.js"),
     },
   });
 

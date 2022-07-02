@@ -51,7 +51,8 @@
       "build/**/*",
       "node_modules/**/*",
       "package.json",
-      "index.js"
+      "index.js",
+      "src/js/preload.js"
     ],
     "directories": {
       "buildResources": "assets"
